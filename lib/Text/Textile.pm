@@ -86,7 +86,7 @@ sub flavor {
         my $flavor = shift;
         $self->{flavor} = $flavor;
         if ($flavor =~ m/^xhtml(\d)?(\D|$)/) {
-            if ($1 eq '2') {
+            if (defined $1 && $1 eq '2') {
                 $self->{_line_open} = '<l>';
                 $self->{_line_close} = '</l>';
                 $self->{_blockcode_open} = '<blockcode>';
